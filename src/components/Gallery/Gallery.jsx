@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Gallery extends Component {
 
@@ -21,8 +22,8 @@ render(){
   <div className="row">
     <div className="col-md-2">
       <ul>
-        <li> <link to='web'>Web</link>   </li>
-        <li> <link to='mobile'>Mobile</link>   </li>
+        <li> <Link to='web'>Web</Link>   </li>
+        <li> <Link to='mobile'>Mobile</Link>   </li>
       </ul>
     </div>
     <div className="col-md-10">
