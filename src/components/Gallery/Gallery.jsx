@@ -1,21 +1,43 @@
 
 import React, { Component } from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default class Gallery extends Component {
 
-state ={
-  productName:'toshiba c3' ,
-};
-welcome()
-{
-  return `welcome user`;
+
+state = {
+  count:0
 }
 
 
-  render() {
-    return <>
-    <h4 className='bg-danger'>{this.state.productName}    <i className='fas fa-home'></i></h4>   
-    <h5>{ this.welcome()}</h5>
-    </>
-  }
+changeCount = ()=>
+{
+  this.setState({count : Math.random()})
+}
+
+render(){
+  return<>
+
+  <div className="row">
+    <div className="col-md-2">
+      <ul>
+        <li> <link to='web'>Web</link>   </li>
+        <li> <link to='mobile'>Mobile</link>   </li>
+      </ul>
+    </div>
+    <div className="col-md-10">
+      <Outlet></Outlet>
+
+      
+    </div>
+  </div>
+
+  
+
+  </>
+}
+
+
+
+
 }
